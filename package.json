@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com:firstprateek/bar-chart.git"
   },
-  "keywords": ["bar chart", "LIT", "widget", "webcomponent"],
+  "keywords": ["bar-chart", "bar chart", "LIT", "widget", "webcomponent"],
   "author": "firstprateek <me@pjoshi.dev> (prateekjoshi.dev)",
   "license": "ISC",
   "homepage": "https://github.com/firstprateek/bar-chart",
