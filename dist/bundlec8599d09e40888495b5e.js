@@ -50,6 +50,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
  * @property data - Array. An array of objects. Each object should be of the form { "group": <group_str>, "value": <number> }, default value is []
  * @property min - Number. Min range value for the y-axis. Default is 0
  * @property max - Number. Max range value for the y-axis. Default is the max "value" in the data stream
+ * @property transitionDuration - Number. Time taken to transition from one data value to another in ms. Default is 1000
  * @property dataApi - String. URL for retrieving the data
  * @property updateFrequency - Number. Seconds after which the chart data should be auto-updated, default is 60 seconds
  * @property autoUpdate - Boolean. Seconds after which the chart data should be auto-updated, default is 60 seconds
@@ -3658,4 +3659,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle3e2ec08fb610b04e61db.js.map
+//# sourceMappingURL=bundlec8599d09e40888495b5e.js.map
