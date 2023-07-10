@@ -1,5 +1,5 @@
 {
-  "name": "bar-chart",
+  "name": "@firstprateek/bar-chart",
   "version": "1.0.1",
   "description": "A customizable web component that plots a bar chart with ordinal values in the x axis and numerical values in y axis.",
   "main": "index.js",

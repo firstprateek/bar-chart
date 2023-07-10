@@ -11,7 +11,7 @@ The widget can render real-time data.
 ## Installation
 
 ```bash
-npm install bar-chart --save
+npm install @firstprateek/bar-chart --save
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ npm install bar-chart --save
 
 ```js
 // In index.js
-import BarChart from 'bar-chart';
+import BarChart from '@firstprateek/bar-chart';
 ```
 
 ```jsx
