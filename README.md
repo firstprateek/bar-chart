@@ -1,40 +1,53 @@
-# wepack-starter-template
+# bar-chart
 
-A minimal starter project for building frontend applications, bundled using Webpack 5.
+A customizable web component that plots a bar chart with ordinal values in the x axis and numerical values in y axis.
+The web component is built using [LIT](https://lit.dev/) and the chart is rendered using [D3](https://d3js.org/)
+The widget can render real-time data.
 
-## Getting started
+## Live Demo
 
-Install dependencies (incl. webpack). Note: This project only defines dev dependencies.
+[Demo](https://firstprateek.github.io/bar-chart/)
+
+## Installation
 
 ```bash
-npm i
+npm install bar-chart --save
 ```
 
-Entry point is src/index.js. Built content is stored under dist/. To build your project, run:
-```bash
-npm run build
+## Usage
+
+```js
+// In index.js
+import BarChart from 'bar-chart';
 ```
 
-To launch development server, run:
-```bash
-npm run dev
+```jsx
+<!DOCTYPE html>
+<head>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <bar-chart
+        width="500" 
+        height="440" 
+        data='[{"group":"A","value":10},{"group":"B","value":19},{"group":"C","value":8}]'
+        min="0"
+        max="20"
+    ></bar-chart>
+</body>
+</html>
 ```
 
-To deploy the built index.html page to the project's github page `https://<username>.github.io/<project-name>/`, first build your changes and then run:
-```bash
-npm run deploy
-```
+Data can be supplied via the data attribute. The data needs to be in the following format:
 
-## Remove un-needed code
+[
+    {'group': 'group1', 'value': 1},
+    {'group': 'group2', 'value': 2},
+    {'group': 'group3', 'value': 3},
+    ...
+]
 
-Clean up unused assets and code from:
+## Note
 
-- src/assets
-- src/styles
-- src/helloWorld.js
-
-## Update description
-
-- README.md
-- package.json
-- meta tags in template.html
+Note that D3 library is not bundled with this widget. Make sure that the D3 library is available in your webpage.
+For example, see the usage section above where D3 is downloaded via CDN using the script tag.
