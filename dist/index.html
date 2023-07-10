@@ -1,16 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Webpack App</title>
-  <meta name="description" content="Starter Template">
-  <meta name="author" content="Prateek Joshi">
-  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-<script defer src="bundle8b3bcc0aad1a9eb9f643.js"></script></head>
-<body>
-    <h1>Test title</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Starter Template">
+    <meta name="author" content="Prateek Joshi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <title>Webpack App</title>
+  <script defer src="bundle3e2ec08fb610b04e61db.js"></script></head>
+  <body>
+    <main>
+      <h1>Bar Chart Demo!</h1>
+      <bar-chart 
+        width="500" 
+        height="440" 
+        data='[{"group":"A","value":10},{"group":"B","value":19},{"group":"C","value":8}]'
+        min="0"
+        max="20"
+      ></bar-chart>
+      
+      <button id="button1">Change to data 1</button>
+      <button id="button2">Change to data 2</button>
+      <button id="button3">Data Stream</button>
+    </main>
+    <script>
+      const button1 = document.querySelector('#button1');
+      const button2 = document.querySelector('#button2');
+      const button3 = document.querySelector('#button3');
+      const barChart = document.querySelector('bar-chart');
+
+      const data1 = [
+        { group: 'A', value: 20 },
+        { group: 'B', value: 10 },
+        { group: 'C', value: 5 },
+        { group: 'D', value: 15 },
+        { group: 'E', value: 18 },
+      ];
+
+      const data2 = [
+        { group: 'A', value: 2 },
+        { group: 'B', value: 5 },
+        { group: 'D', value: 1 },
+        { group: 'E', value: 8 },
+      ];
+
+      let data3 = [
+        { group: 'A', value: 0 },
+        { group: 'B', value: 0 },
+        { group: 'C', value: 0 },
+        { group: 'D', value: 0 },
+        { group: 'E', value: 0 },
+      ];
+
+      button1.addEventListener('click', (event) => {
+        barChart.data = data1;
+      });
+
+      button2.addEventListener('click', (event) => {
+        barChart.data = data2;
+      });
+
+      let timer;
+      let counter = 0;
+      button3.addEventListener('click', (event) => {
+        if (timer) {
+          return;
+        }
+
+        barChart.transitionDuration = 500;
+
+        for (let i=0; i<5; i++) {
+          data3[i].value = 0;
+        }
+
+        timer = setInterval(() => {
+          counter++;
+          if (counter > 0 && counter % 5) {
+            data3[0].value++;
+          }
+          if (counter > 0 && counter % 10) {
+            data3[1].value++;
+          }
+          if (counter > 0 && counter % 2) {
+            data3[2].value++;
+          }
+          if (counter > 0 && counter % 3) {
+            data3[3].value++;
+          }
+          if (counter > 0 && counter % 7) {
+            data3[4].value++;
+          }
+          barChart.data = [...data3];
+
+          if (counter === 20) {
+            counter = 0;
+            clearInterval(timer);
+            timer = undefined;
+            barChart.transitionDuration = 1000;
+          }
+        }, 500);
+      });
+    </script>
+  </body>
 </html>

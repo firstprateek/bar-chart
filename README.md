@@ -16,6 +16,32 @@ npm install bar-chart --save
 
 ## Usage
 
+Properties
+==========
+
+width - Number. width of the widget in pixels, default value is 460
+height - Number. height of the widget in pixels, default value is 400
+data - Array. An array of objects. Each object should be of the form { "group": <group_str>, "value": <number> }, default value is []
+min - Number. Min range value for the y-axis. Default is 0
+max - Number. Max range value for the y-axis. Default is the max "value" in the data stream
+transitionDuration - Number. Time taken to transition from one data value to another in ms. Default is 1000
+dataApi - String. URL for retrieving the data
+updateFrequency - Number. Seconds after which the chart data should be auto-updated, default is 60 seconds
+autoUpdate - Boolean. Seconds after which the chart data should be auto-updated, default is 60 seconds
+
+Events
+======
+
+updated - Indicates when the chart was auto-updated
+
+CSS variables
+=============
+
+--bar-chart-background-color - background color of the poll, default is white
+--bar-chart-bar-color - background color for the individual bars, default is #69B3A2
+--bar-chart-axis-color - color of the axis, default is black
+--bar-chart-text-color - color of the axis text, default is black
+
 ```js
 // In index.js
 import BarChart from 'bar-chart';

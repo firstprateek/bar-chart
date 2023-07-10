@@ -1,16 +1,21 @@
 {
-  "name": "webpack-starter",
+  "name": "poll-widget",
   "version": "1.0.0",
-  "description": "A template repo to get started on a webpack 5 built frontend application",
+  "description": "A customizable web component that plots a bar chart with ordinal values in the x axis and numerical values in y axis.",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve",
     "deploy": "npx gh-pages -d dist"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:firstprateek/bar-chart.git"
+  },
+  "keywords": ["bar chart", "LIT", "widget", "webcomponent"],
+  "author": "firstprateek <me@pjoshi.dev> (prateekjoshi.dev)",
   "license": "ISC",
+  "homepage": "https://github.com/firstprateek/bar-chart",
   "devDependencies": {
     "@babel/core": "^7.22.1",
     "@babel/preset-env": "^7.22.2",
